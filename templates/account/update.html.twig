@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Profil - Linkow{% endblock %}
+
+{% block body %}
+
+<section class="h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card">
+            <div class="card-body p-4 text-black">
+                <a href="{{ path("app_account") }}">Retourner à mon espace<a/>
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">Modifier mes informations</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                    {% if notification %}
+                        <div class="alert alert-info">{{ notification }}</div>
+                    {% endif %}
+                    {{ form(form) }}
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock  %}

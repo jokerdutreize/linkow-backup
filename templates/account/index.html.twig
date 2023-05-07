@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon espace - Linkow{% endblock %}
+
+{% block body %}
+<section class="h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-7">
+          <div class="card">
+            <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+              <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px; margin-left: 10px;">
+                <img src="{% if app.user.illustration %}/uploads/{{ app.user.illustration }}{% else %}https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp{% endif %}"
+                  alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                  style="width: 150px; z-index: 1">
+                <button onclick="window.location.href='{{ path("app_update") }}';" type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                  style="z-index: 1;">
+                  Modifier le profil
+                </button>
+              </div>
+              <div class="ms-3" style="margin-top: 130px; margin-left: 10px;">
+                <h5> {{ app.user.firstame }} {{ app.user.lastname }}</h5>
+                <p>{{ app.user.job }}</p>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa;">
+              <div class="d-flex justify-content-end text-center py-1">
+                <div>
+                  <a href="{{ app.user.facelink }}">
+                    <img src="{{ asset('assets/img/facebook.png') }}" alt="" width="50px" height="50px">
+                  <a/>
+                </div>
+                <div class="">
+                  <a href="{{ app.user.instalink }}">
+                    <img src="{{ asset('assets/img/instagram.png') }}" alt="" width="50px" height="50px">
+                  <a/>
+                </div>
+                <div class="">
+                  <a href="{{ app.user.linkedlink }}">
+                    <img src="{{ asset('assets/img/linkedin.png') }}" alt="" width="50px" height="50px">
+                  <a/>
+                </div>
+                <div>
+                  <a href="{{ app.user.twitterlink }}">
+                    <img src="{{ asset('assets/img/twitter.png') }}" alt="" width="50px" height="50px">
+                  <a/>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">A propos</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                  <p class="font-italic mb-0">Sociéte : {{ app.user.society }}</p>
+                  <p class="font-italic mb-1">Téléphone : {{ app.user.phone }}</p>
+                  <p class="font-italic mb-1">Email : {{ app.user.email }}</p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

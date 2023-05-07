@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron carte">
+        <h1 class="display-4">Linkow</h1>
+        <p class="lead">Expand your connections</p>
+        <hr class="my-4">
+        <p>
+            Bienvenue sur Linkow Gold. <br> Que vous souhaitiez mettre
+             à jour des informations existantes ou supprimer des données
+              obsolètes, Linkow Gold est là pour vous faciliter la tâche. 
+              Nous nous engageons à fournir une expérience utilisateur de
+               qualité supérieure et à garantir la sécurité et la confidentialité de vos données. 
+        </p>
+        {% if app.user %}
+            <a class="btn btn-primary btn-lg" href="{{ path('app_account') }}" role="button">Voir mon profil</a>
+        {% else %}
+            <a class="btn btn-primary btn-lg" href="{{ path('app_login') }}" role="button">Se connecter</a>
+        {% endif %}
+    </div>
+{% endblock body %}
